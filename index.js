@@ -4,6 +4,8 @@ import path from "path";
 import connectToMongo from "./database/db.js";
 import cors from "cors";
 import authroute from "./routes/authroute.js";
+import contactroute from "./routes/contactroute.js";
+
 dotenv.config();
 
 if (!process.env.JWT_SECRET) {
@@ -18,6 +20,7 @@ app.set("view engine", "ejs");
 const __dirname = path.resolve();
 app.set("views", path.join(__dirname, "views"));
 app.use("/auth",authroute)
+app.use("/",contactroute);
 app.use(express.static(path.join(__dirname,"public")));
 app.get("/", (req, res) => {
   res.render("index");
