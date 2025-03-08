@@ -25,10 +25,30 @@ app.use(express.static(path.join(__dirname,"public")));
 app.get("/", (req, res) => {
   res.render("index");
 });
-app.get("/contact",(req,res)=>{
-  res.render("contact");
+app.get("/page/Contact",(req,res)=>{
+  res.render("Contact");
    
 });
+app.get("/page/privacy-policy",(req,res)=>{
+  res.render("privacy-policy");
+});
+app.get("/page/FAQ",(req,res)=>{
+  res.render("FAQ");
+});
+app.get("/page/Terms-and-conditions",(req,res)=>{
+  res.render("Terms-and-conditions");
+});
+app.get("/page/Blogs",(req,res)=>{
+  res.render("Blogs");
+});
+app.get("/page/About",(req,res)=>{
+  res.render("About");
+});
+app.get("/page/Feedback",(req,res)=>{
+  res.render("Feedback");
+});
+
+
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port 127.0.0.1:${process.env.PORT}`);
 });
